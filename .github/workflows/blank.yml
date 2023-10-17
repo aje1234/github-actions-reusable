@@ -2,23 +2,23 @@ name: Reusable Workflow
 
 on:
   workflow_call:
-	inputs:
-	   color:
-	     description: 'Input color'
-	     type: string
-	     default: 'red'
-	     required: false
+     inputs:
+        color:
+	   description: 'Input color'
+	   type: string
+	   default: 'red'
+	   required: false
+    
 jobs:
-  check-repository:
-	  runs-on: ubuntu-latest
-	  steps:
-	     - uses: actions/checkout@v3
-	     - run: ls -a
-      
-  log-context-and-inputs:
-	  runs-on: ubuntu-latest
-	  steps:
-	     - name: Display Github Context
-	       run: echo '${{ toJSON(github) }}'
-	     - name: Display name input
-	       run: echo ${{ inputs.name }}
+   check-repository:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+       - run: ls -a
+   log-context-and-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispay Github Context
+        run: echo '${{ toJSON(github) }}'
+      - name: Display color input
+        run: echo ${{ inputs.color }}
