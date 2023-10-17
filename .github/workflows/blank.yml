@@ -5,9 +5,9 @@ on:
      inputs:
         color:
 	   description: 'Input color'
-	   type: string
+           type: string
 	   default: 'red'
-	   required: false
+           required: false
     
 jobs:
    check-repository:
