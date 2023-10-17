@@ -7,17 +7,18 @@ on:
         type: string
         default: "Ali"
         required: false
-    
+
 jobs:
-   check-repository:
-     runs-on: ubuntu-latest
-     steps:
-       - uses: actions/checkout@v3
-       - run: ls -a
-   log-context-and-inputs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ls -a
+  log-context-and-inputs:
     runs-on: ubuntu-latest
     steps:
       - name: Dispay Github Context
         run: echo '${{ toJSON(github) }}'
-      - name: Display color input
-        run: echo ${{ inputs.color }}
+      - name: Display name input
+        run: echo ${{ inputs.name }}
+
