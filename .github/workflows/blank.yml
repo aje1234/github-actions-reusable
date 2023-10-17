@@ -1,13 +1,12 @@
 name: Reusable Workflow
-
 on:
   workflow_call:
-     inputs:
-        color:
-	   description: 'Input color'
-           type: string
-	   default: 'red'
-           required: false
+    inputs:
+      name:
+        description: "Input description"
+        type: string
+        default: "Ali"
+        required: false
     
 jobs:
    check-repository:
